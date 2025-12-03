@@ -16,7 +16,7 @@ struct BeautifulConfig {
   bool semicolons = true;
   
   //! indent using spaces
-  bool indent_spaces = false;
+  bool indent_spaces = true;
   
   //! number of spaces to indent with
   int indent_spaces_per_tab = 4;
