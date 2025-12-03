@@ -30,6 +30,10 @@ enum ResourceType {
   OBJECT,
   ROOM,
   CONSTANT,
+  TILESET,
+  SEQUENCE,
+  AUDIOGROUP,
+  NOTE,
   NONE
 };
 

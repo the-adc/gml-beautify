@@ -39,9 +39,12 @@ private:
   std::string root;
   std::string project_file;
   
+  ResourceType determine_resource_type(const std::string& path_p);
+
   //! parses the given DOM tree for the given type of resources
-  void read_resource_tree(ResourceTree& out, void* xml, ResourceType type);
-  
+  //void read_resource_tree(ResourceTree& out, void* xml, ResourceType type);
+  //void read_resource_tree(ResourceTree& root, void* xml_v, ResourceType t)
+
   //! helper for beautify
   //! beautifies the script resource tree.
   void beautify_script_tree(BeautifulConfig bc, bool dry, ResourceTree&);
