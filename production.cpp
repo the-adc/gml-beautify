@@ -169,6 +169,10 @@ string PrWith::to_string() {
   return "with " + objid->to_string() + "\n" + event->to_string();
 }
 
+string PrFunction::to_string() {
+    return "function " + function->to_string() + "\n" + event->to_string();
+}
+
 string PrRepeat::to_string() {
   return "repeat " + count->to_string() + "\n" + event->to_string();
 }

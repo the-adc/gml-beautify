@@ -88,6 +88,8 @@ PrStatement* Parser::read_statement() {
       return read_do();
     else if (value == "with")
       return read_with();
+    else if (value == "function")
+        return read_function();
     else if (value == "switch")
       return read_switch();
     else if (value == "return") {
@@ -562,6 +564,18 @@ PrWith* Parser::read_with() {
   p->event = read_statement();
   siphonWS(p->event, p, true);
   return p;
+}
+
+PrFunction* Parser::read_function() {
+    PrFunction* p = new PrFunction();
+    assert_peek(Token(KW, "function"), "%unexpected; expected \"function\" statement.");
+    ts.read(); // function
+    ignoreWS(p);
+    p->function = read_expression_function();
+    siphonWS(p->function, p, false, true);
+    p->event = read_statement();
+    siphonWS(p->event, p, true);
+    return p;
 }
 
 PrSwitch* Parser::read_switch() {

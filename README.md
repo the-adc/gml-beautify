@@ -1,6 +1,8 @@
+Originally developed by NaOH (nstbayless), maintained by pattaconna.
+
 # Game Maker Language beautifier
 
-*Compatible with Game Maker Studio 1.4.x*
+*Compatible with Game Maker Studio 2.3+ and later*
 
 Yes, that's right, you no longer have to fiddle with a javascript beautifier that doesn't support all of GML syntax!
 

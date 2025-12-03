@@ -223,7 +223,7 @@ Token TokenStream::read_operator() {
 
 const char* KEYWORDS[] = {
   "var",
-  "globvar",
+  "function",
   "globalvar",
   "if",
   "else",

@@ -62,7 +62,7 @@ int main (int argn, char** argv) {
   }
   
   // beautify project
-  if (ends_with(filename,".project.gmx")) {
+  if (ends_with(filename,".yyp")) {
     Project* p = new Project(filename);
     p->read_project_file();
     p->beautify(config, dry);

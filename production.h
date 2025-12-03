@@ -224,6 +224,15 @@ struct PrWith: PrStatement {
   PrStatement* event;
 };
 
+struct PrFunction : PrStatement {
+    virtual std::string to_string();
+    virtual LBString compile(CompilerContext& cc) const;
+    virtual LBString beautiful(const BeautifulConfig&, BeautifulContext);
+
+    PrExpressionFn* function;
+    PrStatement* event;
+};
+
 struct PrAccessorExpression: PrExpression {
   virtual std::string to_string();
   virtual LBString compile(CompilerContext& cc) const;

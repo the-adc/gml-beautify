@@ -638,6 +638,22 @@ LBString PrWith::beautiful(const BeautifulConfig& config, BeautifulContext conte
   return s;
 }
 
+LBString PrFunction::beautiful(const BeautifulConfig& config, BeautifulContext context) {
+    LBString s = "function";
+    s += LBString(PAD, 17 * context.cost_mult);
+    s += renderWS(config, context);
+	s += function->beautiful(config, context);
+    s += renderWS(config, context.as_internal_eol());
+    if (!hangable(config, event, true))
+        s += LBString(FORCE);
+    s.extend(event->beautiful(config, context).indent(!hangable(config, event)), !hangable(config, event));
+
+    // end of statement
+    context.never_semicolon = true;
+    s += end_statement_beautiful(config, context);
+    return s;
+}
+
 LBString PrAccessorExpression::beautiful(const BeautifulConfig& config, BeautifulContext context) {
   LBString s = ds->beautiful(config, context);
   s += renderWS(config, context);

@@ -270,6 +270,10 @@ LBString PrWith::compile(CompilerContext& cc) const {
   throw LanguageFeatureNotImplementedError("with statements");
 }
 
+LBString PrFunction::compile(CompilerContext& cc) const {
+    throw LanguageFeatureNotImplementedError("function statements");
+}
+
 LBString PrAccessorExpression::compile(CompilerContext& cc) const {
   if (acc != "")
     throw LanguageFeatureNotImplementedError("accessor \"" + acc + "\"");

@@ -44,6 +44,7 @@ private:
   PrBody* read_block(bool braces = true);
   PrFor* read_for();
   PrWith* read_with();
+  PrFunction* read_function();
   PrWhile* read_while();
   PrRepeat* read_repeat();
   PrDo* read_do();
