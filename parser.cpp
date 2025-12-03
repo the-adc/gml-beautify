@@ -74,7 +74,7 @@ PrStatement* Parser::read_statement() {
   case ENX:
     return new PrEmptyStatement();
   case KW:
-    if (value == "var" || value == "globvar")
+    if (value == "var" || value == "globalvar")
       return read_statement_var();
     else if (value == "if")
       return read_statement_if();
@@ -308,7 +308,7 @@ PrExprParen* Parser::read_expression_parentheses() {
 
 PrStatementVar* Parser::read_statement_var() {
   PrStatementVar* p = new PrStatementVar();
-  if (ts.peek() != Token(KW,"globvar"))
+  if (ts.peek() != Token(KW,"globalvar"))
     assert_peek(Token(KW,"var"),"%unexpected while expecting var declaration");
   p->type = ts.read().value; // read "var"
   while (true) {
